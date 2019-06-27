@@ -48,10 +48,9 @@ Output file:
 
 True if is on the critical path, false otherwise.
 
-#Explanation
+# Explanation
 The first step in the AHP is to develop a graphical representation of the problem in terms of the overall goal, the criteria, and the decision alternatives.
 Pairwise comparisons are fundamental building blocks of the AHP. The AHP employs an underlying scale with values from 1 to 9 to rate the relative preferences for two items, higher is the score more is preferred:
-
 <img src="https://i.ibb.co/88VDYZ6/eliminare.png" alt="eliminare" border="0">
 
 
