@@ -51,9 +51,11 @@ We sort fp (descending) and use the indexes to build the ranking of the alternat
 The final decision will be the alternative whose rank is 1.
 
 In the AHP the pairwise comparisons in a judgment matrix are considered to be adequately consistent if the corresponding consistency ratio (CR) is less than 10%. First the consistency index (CI) needs to be estimated. This is done by adding the columns in the judgment matrix and multiply the resulting vector by the vector of priorities (i.e., the approximated eigenvector) obtained earlier. RCI is fixed number that depends from the number of alternatives.
+
 RCI from 1 to 9: 0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45
 
 CI = (lambdamax - #alternatives) / (#alternatives -1) 
+
 CR = CI / RCI
 
 If CR >= 0.10 is a good idea to reconsider the values in the matrix (it is not mandatory)
