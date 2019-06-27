@@ -29,25 +29,6 @@ Implement a Python program for:
 
 They're represented as matrix and the 0 means that the program has to do the reciprocal.
 
-Input file:
-- (task id, task name, duration, dependencies) i.e. 20,B,10,10
-
-Output file:
-- task id, task name, duration, ES, EF, LS, LF, float, isCritical
-- 1, A, 12, 1, 12, 1, 12, 0, True
-- 2, B, 6, 13, 18, 31, 36, 18, False
-- 3, E, 12, 13, 24, 19, 30, 6, False
-- 4, F, 18, 13, 30, 13, 30, 0, True
-- 5, C, 2, 19, 20, 37, 38, 18, False
-- 6, G, 10, 31, 40, 31, 40, 0, True
-- 7, I, 8, 31, 38, 37, 44, 6, False
-- 8, D, 8, 21, 28, 39, 46, 18, False
-- 9, H, 6, 41, 46, 41, 46, 0, True
-- 10, J, 2, 39, 40, 45, 46, 6, False
-- 11, K, 8, 47, 54, 47, 54, 0, True
-
-True if is on the critical path, false otherwise.
-
 # Explanation
 The first step in the AHP is to develop a graphical representation of the problem in terms of the overall goal, the criteria, and the decision alternatives.
 Pairwise comparisons are fundamental building blocks of the AHP. The AHP employs an underlying scale with values from 1 to 9 to rate the relative preferences for two items, higher is the score more is preferred:
@@ -56,7 +37,8 @@ Pairwise comparisons are fundamental building blocks of the AHP. The AHP employs
 The first thing to do is construct a matrix for each criterion (comparing alternatives against each criterion) and one for the criterion against the final decision goal. Then we have to calculate the priority vector for each comparison matrix.
 <img src="https://i.ibb.co/8Df7TQw/eliminare.png" alt="eliminare" border="0">
 
-
+Example of the structure of the problem:
+<img src="https://i.ibb.co/YZcxrTc/eliminare.png" alt="eliminare" border="0">
 
 
 # Implementation
