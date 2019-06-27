@@ -24,8 +24,10 @@ Implement a Python program for:
 
 # Architecture
 - assignment2.py is the program file;
-- In the folder CriteriaAlternatives there are the Criteria with the alternatives;
-- In the folder CriteriaVersusGoal there are the Goals
+- in the folder CriteriaAlternatives there are the Criteria with the alternatives;
+- in the folder CriteriaVersusGoal there are the Goals;
+- in Alternatives.txt there's the names of the alternatives;
+- in RCIvalues.txt there are the values of the RCI.
 
 They're represented as matrix and the 0 means that the program has to do the reciprocal.
 
@@ -37,9 +39,24 @@ Pairwise comparisons are fundamental building blocks of the AHP. The AHP employs
 The first thing to do is construct a matrix for each criterion (comparing alternatives against each criterion) and one for the criterion against the final decision goal. Then we have to calculate the priority vector for each comparison matrix.
 <img src="https://i.ibb.co/8Df7TQw/eliminare.png" alt="eliminare" border="0">
 
+We do the same for the GOAL matrix.
+
 Example of the structure of the problem:
 <img src="https://i.ibb.co/YZcxrTc/eliminare.png" alt="eliminare" border="0">
 
+For each matrix we calculate lambdamax that is the dot product between the priority vector and the sum of elements column by column.
+Then we create a matrix(called "fp") of all the priority vectors dot the matrix of the goal.
+
+We sort fp (descending) and use the indexes to build the ranking of the alternatives against the final goal with respect to all the considered criteria.
+The final decision will be the alternative whose rank is 1.
+
+In the AHP the pairwise comparisons in a judgment matrix are considered to be adequately consistent if the corresponding consistency ratio (CR) is less than 10%. First the consistency index (CI) needs to be estimated. This is done by adding the columns in the judgment matrix and multiply the resulting vector by the vector of priorities (i.e., the approximated eigenvector) obtained earlier. RCI is fixed number that depends from the number of alternatives.
+RCI from 1 to 9: 0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45
+
+CI = (lambdamax - #alternatives) / (#alternatives -1) 
+CR = CI / RCI
+
+If CR >= 0.10 is a good idea to reconsider the values in the matrix (it is not mandatory)
 
 # Implementation
 The app is implemented in Python by using Spyder and NumPy.
